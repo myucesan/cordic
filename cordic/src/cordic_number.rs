@@ -116,21 +116,6 @@ where
     }
 
     #[inline(always)]
-    fn frac_pi_2() -> Self {
-        Self::FRAC_PI_2
-    }
-
-    #[inline(always)]
-    fn pi() -> Self {
-        Self::PI
-    }
-
-    #[inline(always)]
-    fn e() -> Self {
-        Self::E
-    }
-
-    #[inline(always)]
     fn from_u0f64(val: U0F64) -> Self {
         val.to_num()
     }
