@@ -28,9 +28,7 @@ pub trait CordicNumber:
     fn half() -> Self {
         Self::one() >> 1
     }
-    fn frac_pi_2() -> Self;
-    fn pi() -> Self;
-    fn e() -> Self;
+
     fn from_u0f64(val: U0F64) -> Self;
     fn num_fract_bits() -> u8;
     fn num_bits() -> u8;
@@ -44,9 +42,7 @@ impl<Fract> CordicNumber for FixedI8<Fract>
 where
     Fract: 'static
         + Unsigned
-        + IsLessOrEqual<U8, Output = True>
-        + IsLessOrEqual<U6, Output = True>
-        + IsLessOrEqual<U5, Output = True>,
+        + IsLessOrEqual<U8, Output = True>,
 {
     #[inline(always)]
     fn floor(self) -> Self {
@@ -63,20 +59,6 @@ where
         Self::from_num(1.0)
     }
 
-    #[inline(always)]
-    fn frac_pi_2() -> Self {
-        Self::FRAC_PI_2
-    }
-
-    #[inline(always)]
-    fn pi() -> Self {
-        Self::PI
-    }
-
-    #[inline(always)]
-    fn e() -> Self {
-        Self::E
-    }
 
     #[inline(always)]
     fn from_u0f64(val: U0F64) -> Self {
@@ -98,7 +80,7 @@ impl<Fract> CordicNumber for FixedI32<Fract>
 where
     Fract: 'static
         + Unsigned
-        + IsLessOrEqual<U32, Output = True>
+        + IsLessOrEqual<U32, Output = True>,
 {
     #[inline(always)]
     fn floor(self) -> Self {
@@ -135,9 +117,7 @@ impl<Fract> CordicNumber for FixedI16<Fract>
 where
     Fract: 'static
         + Unsigned
-        + IsLessOrEqual<U16, Output = True>
-        + IsLessOrEqual<U14, Output = True>
-        + IsLessOrEqual<U13, Output = True>,
+        + IsLessOrEqual<U16, Output = True>,
 {
     #[inline(always)]
     fn floor(self) -> Self {
@@ -154,20 +134,7 @@ where
         Self::from_num(1.0)
     }
 
-    #[inline(always)]
-    fn frac_pi_2() -> Self {
-        Self::FRAC_PI_2
-    }
 
-    #[inline(always)]
-    fn pi() -> Self {
-        Self::PI
-    }
-
-    #[inline(always)]
-    fn e() -> Self {
-        Self::E
-    }
 
     #[inline(always)]
     fn from_u0f64(val: U0F64) -> Self {
@@ -189,9 +156,7 @@ impl<Fract> CordicNumber for FixedI64<Fract>
 where
     Fract: 'static
         + Unsigned
-        + IsLessOrEqual<U64, Output = True>
-        + IsLessOrEqual<U62, Output = True>
-        + IsLessOrEqual<U61, Output = True>,
+        + IsLessOrEqual<U64, Output = True>,
 {
     #[inline(always)]
     fn floor(self) -> Self {
@@ -208,20 +173,7 @@ where
         Self::from_num(1.0)
     }
 
-    #[inline(always)]
-    fn frac_pi_2() -> Self {
-        Self::FRAC_PI_2
-    }
 
-    #[inline(always)]
-    fn pi() -> Self {
-        Self::PI
-    }
-
-    #[inline(always)]
-    fn e() -> Self {
-        Self::E
-    }
 
     #[inline(always)]
     fn from_u0f64(val: U0F64) -> Self {
