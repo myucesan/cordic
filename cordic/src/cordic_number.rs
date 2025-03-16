@@ -99,8 +99,6 @@ where
     Fract: 'static
         + Unsigned
         + IsLessOrEqual<U32, Output = True>
-        // + IsLessOrEqual<U30, Output = True>
-        // + IsLessOrEqual<U29, Output = True>,
 {
     #[inline(always)]
     fn floor(self) -> Self {
